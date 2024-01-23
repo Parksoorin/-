@@ -1,0 +1,30 @@
+<script>
+	
+	/*
+		[문제]  
+			거스름돈 8900원을 거슬러주려고 한다.
+			화폐 단위별로 몇 장씩 나눠줘야 하는지 구하시오.
+		[정답]
+			오천원 : 1 
+			일천원 : 3 
+			오백원 : 1 
+			일백원 : 4
+	*/
+	/*
+		이해를 돕기위해 한글 변수를 사용하였다.
+	*/
+
+	let all = 8900;
+
+    let a5000 = parseInt(all/5000);
+    let a1000 = parseInt(all%5000 / 1000);
+    let a500 = parseInt(all%1000/500);
+    let a100 = all%500 / 100;
+
+    document.write(a5000, "<br/>");
+    document.write(a1000, "<br/>");
+    document.write(a500, "<br/>");
+    document.write(a100);
+
+
+</script>

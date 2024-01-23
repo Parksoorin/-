@@ -1,0 +1,22 @@
+<script>
+
+    /*
+        [문제] 
+            아래 a의 값의 만의 자리 , 백의 자리 , 일의 자리 숫자를 출력하시오.
+        [정답]
+            5
+            3
+            1
+            
+    */
+    let a = 54321;
+
+    let b = parseInt(a / 10000);
+    let c = parseInt(a % 1000 / 100);
+    let d = a % 10;
+
+    document.write("만의 자리 : ", b, "<br/>");
+    document.write("백의 자리 : ", c, "<br/>");
+    document.write("일의 자리 : ", d, "<br/>");
+
+</script>

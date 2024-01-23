@@ -1,0 +1,22 @@
+<script>
+
+    /*
+        [문제] 
+            a의 값을 각자리별로 나눠서 저장후 각 숫자들의 합을 구하시오.
+        [정답]
+            15
+            
+    */
+    let all = 54321;
+
+    let a = parseInt(all / 10000);
+    let b = parseInt(all % 10000 / 1000);
+    let c = parseInt(all % 1000 / 100);
+    let d = parseInt(all % 100 / 10);
+    let e = all % 10;
+
+    let total = a + b + c + d + e;
+
+    document.write(total);
+
+</script>

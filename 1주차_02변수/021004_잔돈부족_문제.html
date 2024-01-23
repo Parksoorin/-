@@ -1,0 +1,32 @@
+<script>
+	
+	/*
+		[문제]  
+			거스름돈 174900원을 거슬러주려고 한다.
+			단, 일천원 짜리는 매진되어 오백원짜리로 거슬러준다면,
+			단위별로 몇 장씩 나눠줘야 하는지 구하시오.
+		[정답]
+			오만원 : 3, 일만원 : 2, 오천원 : 0, 
+			일천원 : 0, 오백원 : 9, 일백원 : 4
+	*/
+
+	/*
+	이해를 돕기위해 한글 변수를 사용하였다.
+	*/
+	
+	let all = 174900;
+
+    let a50000 = parseInt(all/50000);
+    let a10000 = parseInt(all%50000/10000);
+    let a5000 = parseInt(all%10000/5000);
+    let a500 = parseInt(all%5000/500);
+    let a100 = all%500 / 100;
+
+    document.write(a50000, "<br/>");
+    document.write(a10000, "<br/>");
+    document.write(a5000, "<br/>");
+    document.write("1000 : <br/>");
+    document.write(a500, "<br/>");
+    document.write(a100, "<br/>");
+
+</script>
