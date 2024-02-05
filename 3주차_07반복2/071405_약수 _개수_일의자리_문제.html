@@ -1,0 +1,24 @@
+<script>
+
+    /*
+        [문제]
+            80의 약수 중에서 순서대로 약수를 출력했을 때, 
+            [조건1] 일의자리가 4인 약수들만 출력하고,
+            [조건2] 위 수의 개수도 출력하시오.
+        [정답]
+            4 
+            count = 1        
+    */
+
+    let count = 0;
+
+    for(let i = 1; i <= 80; i++){
+        let a = i % 10;
+        if(a ==4 && 80 % i == 0){
+            count += 1;
+            document.write(i, "<br>");
+            document.write("count = ", count, "<br>");
+        }
+    }
+   
+</script>
