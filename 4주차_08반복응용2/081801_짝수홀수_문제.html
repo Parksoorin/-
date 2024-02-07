@@ -1,0 +1,30 @@
+<script>
+
+    /* 
+        [문제]
+            [1] 랜덤(1~10)을 무한이 출력한다.
+            [2] 짝수가 3번 나오면종료 종료한다. 
+            [3] 종료후 종료될때까지 홀수가 몇번나왔는지 출력하시오.
+        [예시]
+            4 1 3 4 1 10
+            홀수=3
+    */
+
+    let count = 0, count1 = 0;
+
+    for(let i = true; i == true;){
+        let a = parseInt(Math.random()*10) + 1;
+        document.write(a, " ");
+        count1++;
+        
+        if(a % 2 == 0){
+            count++;
+            if(count == 3){
+                i = false;
+            }
+        }
+    }
+
+    document.write("<br>홀수 : ", count1);
+
+</script>
