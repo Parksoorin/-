@@ -1,0 +1,29 @@
+<script>
+
+    /*
+        [문제] 
+            9의 배수 중 100보다 큰 네번째 배수 출력하시오. 
+        [정답]
+            135
+    */ 
+
+    let run = true;
+
+    let i = 1;
+    let count = 0;
+    let result1 = 0;
+
+    while(run){
+        if(i % 9 == 0 && i > 100){
+            count++;
+            if(count == 4){
+                result1 = i;
+                run = false;
+            }
+        }
+        i++;
+    }
+
+    document.write(result1);
+
+</script>

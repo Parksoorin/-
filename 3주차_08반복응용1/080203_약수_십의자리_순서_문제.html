@@ -1,0 +1,32 @@
+<script>
+
+    /*
+        [문제]
+            1980의 약수 중에서 순서대로 약수를 출력했을 때, 
+            십의자리가 3인 두 번째 약수를 출력하시오.
+        [정답]
+            33  
+    */
+
+    let i = 1;
+    let num = 1980;
+    let result = 0;
+    let count = 0;
+
+    while(i <= num){
+        if(num % i == 0){
+            document.write(i, "<br>");
+            let a = parseInt(i % 100 / 10);
+            if(a == 3){
+                count++;
+                if(count == 2){
+                    result = i;
+                }
+            }
+        }
+        i++;
+    }
+
+    document.write("=", result);
+
+</script>
