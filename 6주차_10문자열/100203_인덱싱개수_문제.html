@@ -1,0 +1,28 @@
+<script>
+
+    /*
+        [문제]
+            아래 문자열을 서로 비교하여, 같은글자수와 틀린글자수를 출력하시오.
+        [정답]
+            같은글자수=4
+            틀린글자수=1;
+    */
+
+    let text = "abcde";
+    let text2 = "abdde";
+
+    let count1 = 0;
+    let count2 = 0;
+
+    for(let i = 0; i  < text.length; i++){
+        if(text[i] == text2[i]){
+            count1++;
+        } else {
+            count2++;
+        }
+    }
+
+    document.write("같은 글자 수 : ", count1, "<br>");
+    document.write("틀린 글자 수 : ", count2, "<br>");
+
+</script>
