@@ -1,0 +1,57 @@
+<script>
+
+    /*
+        [문제]
+            이름은 name배열에 성적은 score배열에 
+            각각 저장 후 출력하시오.
+        [정답]
+            name = 김철수,이만수,이영희
+            score = 87,42,95
+    */
+
+    /*
+        [문제]
+           str의 내용은 각반 학생들의 이번시험 데이터이다.
+           , 를 기준으로 한학생에 대한 데이터이며, 
+           / 를 기준으로 할때 번호,이름,국어,영어,수학 데이터이다.
+           [1] 번호는 numberList 에 순차적으로 저장한다.
+           [2] 이름은 nameList 에 순차적으로 저장한다.
+           [3] 국어는 korList 에 순차적으로 저장한다.
+           [4] 영어는 engList 에 순차적으로 저장한다.
+           [5] 수학은 mathList 에 순차적으로 저장한다.
+        [정답]
+            1001,1002,1003
+            김철수,이만수,이영희
+            87,42,95
+            30,32,21
+            10,19,56
+    */
+
+    let str = "1001/김철수/87/30/10,1002/이만수/42/32/19,1003/이영희/95/21/56";
+    let numberList = [];  
+    let nameList = [];
+    let korList = [];
+    let engList = [];
+    let mathList = [];
+
+    let token = str.split(",");
+    // token = [1001/김철수/87/30/10 , 1002/이만수/42/32/19 , 1003/이영희/95/21/56]
+    for(let i=0; i<token.length; i++) {
+        // a = 1001/김철수/87/30/10
+        let a = token[i];
+        // b = [1001,김철수,87,30,10]
+        let b = a.split("/");
+        numberList.push(Number(b[0]));
+        nameList.push(b[1]);
+        korList.push(Number(b[2]));
+        engList.push(Number(b[3]));
+        mathList.push(Number(b[4]));
+    }
+
+    document.write(numberList + "<br>");
+    document.write(nameList + "<br>");
+    document.write(korList + "<br>");
+    document.write(engList + "<br>");
+    document.write(mathList + "<br>");
+
+</script>
