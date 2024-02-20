@@ -1,0 +1,49 @@
+<script>
+
+    /*
+        [문제]
+            0~4 사이의 랜덤 숫자를 저장해 arr배열에서 그 위치의 값이
+            최대값인지 검사한다.
+            만약 최대값이면 그 위치의 값을 0으로 바꾸고,
+            전부 0이되면 종료한다. 
+            과정을 전부 출력하시오.
+        [예시]
+            랜덤 : 3
+            [11, 87, 42, 0, 24]
+
+            랜덤 : 0
+            [11, 87, 42, 0, 24]   <- 최대값이 아니므로 그대로 유지
+
+            랜덤 : 1
+            [11, 0, 42, 100, 24]
+
+            ...
+    */
+
+    let arr = [11, 87, 42, 100, 24];
+
+    while(true){
+        let max = 0;
+        let ran = parseInt(Math.random()*5);
+        document.write("랜덤 : ", ran, "<br>");
+        for(let j = 0; j < arr.length; j++){
+            if(arr[j]>max){
+                max = arr[j];
+            }
+        }
+        if(max == arr[ran]){
+            arr[ran] = 0;
+        }
+        document.write(arr, "<br>");
+        let cnt = 0;
+        for(let k = 0; k < arr.length; k++){
+            if(arr[k] == 0){
+                cnt++;
+            }
+        }
+        if(cnt == 5){
+            break;
+        }
+    }
+
+</script>
