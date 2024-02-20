@@ -1,0 +1,28 @@
+<script>
+
+    
+    /*
+        [문제]
+            arr배열을 한 줄당 3개씩 3줄 총 9개로 이차원으로 만들고, 
+            랜덤값(1~100)을 9개 저장하시오.
+        [예시]
+            [56, 64, 10] 
+            [100, 40, 12]
+            [9, 70, 29]     
+    */
+   
+    let arr = [];
+   
+    for(let i = 0; i < 3; i++){
+        let a = parseInt(Math.random()*100)+1;
+        let b = parseInt(Math.random()*100)+1;
+        let c = parseInt(Math.random()*100)+1;
+
+        arr.push([a, b, c]);
+    }
+
+    document.write(arr[0], "<br>");
+    document.write(arr[1], "<br>");
+    document.write(arr[2], "<br>");
+
+</script>
