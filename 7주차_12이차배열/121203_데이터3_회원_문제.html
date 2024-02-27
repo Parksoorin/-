@@ -1,0 +1,76 @@
+<script>
+
+    /*
+        [문제]
+            memberList는 회원 목록 데이터이다.
+            순서대로 회원번호와 회원아이디이다.
+
+            itemList은 쇼핑몰 판매 상품 데이터이다.
+            순서대로 상품이름과 가격이다.
+            
+            orderList는 오늘 주문 목록이다. 
+            순서대로 주문아이디 , 상품 , 개수 이다. 
+
+            회원별 구입총합을 출력하시오.
+            [번호, 아이디 , 총합 ] 을 출력하시오.
+            단, 금액이 높은순으로 출력하시오.
+
+        [정답]
+            1002,pythongood,28000
+            1003,testid,16000
+            1001,qwer1234,4400
+    */
+
+    let memberList = [
+        [1001 , "qwer1234" ],
+        [1002 , "pythongood" ],
+        [1003 , "testid" ],
+    ];
+
+    let itemList = [
+        ["사과", 1100],
+        ["바나나", 2000],
+        ["딸기", 4300],
+    ];
+
+    let orderList = [
+        ["qwer1234" , "사과" , 3],
+        ["pythongood" , "딸기" , 6],
+        ["testid" , "바나나" , 1],
+        ["pythongood" , "사과" , 2],
+        ["testid" , "바나나" , 7],
+        ["qwer1234" , "사과" , 1],
+    ];
+
+    let view = [];
+    
+    for(let i = 0; i < memberList.length; i++){
+        view.push([memberList[i][0], memberList[i][1], 0]);
+        for(let j = 0; j < orderList.length; j++){
+            if(memberList[i][1] == orderList[j][0]){
+                if(orderList[j][1] == "사과"){
+                    view[i][2] += itemList[0][1] * orderList[j][2];
+                } else if(orderList[j][1] == "바나나"){
+                    view[i][2] += itemList[1][1] * orderList[j][2];
+                } else if(orderList[j][1] == "딸기"){
+                    view[i][2] += itemList[2][1] * orderList[j][2];
+                }
+            }
+        }
+    }
+
+    view.sort((a, b) => {
+        if(a[2] > b[2]){
+            return -1;
+        } else if(a[2] < b[2]){
+            return 1;
+        } else {
+            return 0;
+        }
+    });
+
+    for(let i = 0; i < view.length; i++){
+        document.write(view[i], "<br>");
+    }
+
+</script>
