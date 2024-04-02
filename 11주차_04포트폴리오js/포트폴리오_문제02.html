@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div align="center" id="main">
+
+    </div>
+    <script>
+        let tbl_food = [
+            {food_category: "bread", category_m: "b-bagel", food_code: "b-b_001", food_name: "플레인 베이글", food_price: 3300},
+            {food_category: "bread", category_m: "b-bagel", food_code: "b-b_002", food_name: "블루베리 베이글", food_price: 3500},
+            {food_category: "bread", category_m: "b-scone", food_code: "b-s_001", food_name: "클래식 스콘", food_price: 3300},
+            {food_category: "cake", category_m: "c-cake", food_code: "c-_001", food_name: "티라미수", food_price: 5900},
+            {food_category: "cake", category_m: "c-cake", food_code: "c-_002", food_name: "생크림 카스텔라", food_price: 4500},
+            {food_category: "cake", category_m: "c-cake", food_code: "c-_003", food_name: "바스크 치즈 케이크", food_price: 7900},
+            {food_category: "snack", category_m: "cookie", food_code: "s-c_001", food_name: "다크초콜릿 쿠키", food_price: 2800},
+            {food_category: "snack", category_m: "cookie", food_code: "s-c_002", food_name: "화이트초콜릿 쿠키", food_price: 2800},
+            {food_category: "snack", category_m: "macaron", food_code: "s-m_001", food_name: "바닐라 마카롱", food_price: 2700},
+            {food_category: "snack", category_m: "macaron", food_code: "s-m_002", food_name: "블루베리 마카롱", food_price: 2700}
+        ];
+    
+        /*
+            문제 02. 브레드와 케이크 카테고리에서 5,000원 이상의 상품의 개수을 출력하시오.
+    
+            결과) 2
+        */
+    
+        function getViewList(tbl_food){
+            let cnt = 0;
+            for(let i = 0; i < tbl_food.length; i++){
+                if(tbl_food[i].food_category == "bread" || tbl_food[i].food_category == "cake"){
+                    if(tbl_food[i].food_price >= 5000){
+                        cnt++;
+                    }
+                }
+            }
+            return cnt;
+        }
+    
+        function printList(viewList){
+            let str = ``;
+            str += `
+            <table border = "1">
+                <tr>
+                    <th>5,000원 이상의 상품 개수</th>
+                </tr>
+                <tr>
+                    <td>${cnt}</td>
+                </tr>
+            </table>
+            `
+            let main = document.querySelector("#main");
+            main.innerHTML = str;
+        }
+    
+        let cnt = getViewList(tbl_food);
+        getViewList(cnt);
+        printList(cnt);
+    
+    </script>
+</body>
+</html>
